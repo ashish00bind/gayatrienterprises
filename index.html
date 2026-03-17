@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gayatri Enterprises | Industrial Manpower & Contract Labor Solutions</title>
+    <meta name="description" content="Leading industrial manpower supplier. We provide skilled contract labor, factory operations support, and HR solutions for manufacturing plants.">
+    <meta name="description" content="Gayatri Enterprises is a trusted industrial manpower supplier in Ankleshwar GIDC providing skilled and unskilled labour supply, contract labour management and workforce solutions for factories across Gujarat.">
+    <meta name="keywords" content="industrial manpower supplier, labour contractor ankleshwar, manpower supply gujarat, contract labour supplier">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Embedded here for specific page logic, move to style.css if preferred */
+        .hero {
+            position: relative;
+            height: 90vh; /* Full viewport height */
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.8)), 
+                        url('assets/images/4.png'); /* Background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+            color: #fff;
+            margin-top: var(--header-height);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem); /* Responsive text */
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #E5E7EB;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: -80px; /* Overlap hero */
+            position: relative;
+            z-index: 10;
+            margin-bottom: 5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: var(--font-heading);
+            display: block;
+        }
+
+        [data-theme="dark"] .stat-number { color: #fff; }
+
+        /* Services Grid on Home */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Brand Logo Sizing & Theme Compatibility --- */
+        .brand-logo {
+            height: 40px; /* perfectly aligns with the 1.5rem text size */
+            width: auto;
+            display: block;
+            object-fit: contain;
+            transition: filter 0.3s ease;
+        }
+
+        /* Light Mode (Default) - Inverts the white SVG to dark charcoal to match text */
+        :root .brand-logo {
+            filter: invert(85%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(15%);
+        }
+
+        /* Dark Mode - Keeps the SVG in its original white color */
+        [data-theme="dark"] .brand-logo,
+        .footer-logo {
+            filter: none; 
+        }
+        .footer-white-logo {
+            height: 45px; /* Text ke size ke hisaab se perfect alignment */
+            width: auto;
+            display: block;
+            object-fit: contain;
+            /* Yeh filter SVG ko pehle black karta hai, phir invert karke pure white (#FFFFFF) bana deta hai */
+            filter: brightness(0) invert(1); 
+        }
+    </style>
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "EmploymentAgency",
+        "name": "Gayatri Enterprises",
+        "image": "https://www.gayatri-enterprises.in/assets/images/ge_logo.svg",
+        "@id": "",
+        "url": "https://www.gayatri-enterprises.in",
+        "telephone": "+919016461241",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "S-12, Jivandeep Arcade Besides Miranda Tools, Near Asian Paints Chokdi, GIDC",
+            "addressLocality": "Ankleshwar",
+            "addressRegion": "Gujarat",
+            "postalCode": "393002",
+            "addressCountry": "IN"
+        },
+        "areaServed": ["Ankleshwar", "Bharuch", "Dahej", "Vapi", "Surat", "Vadodara"],
+        "description": "Leading industrial manpower supplier and contract labour agency providing fully compliant workforce solutions for factories in Gujarat.",
+        "priceRange": "$$"
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/ge_logo.svg"  class="brand-logo">
+                Gayatri <span>Enterprises</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <a href="contact.html" class="btn btn-primary" style="display: none; @media(min-width:768px){display:flex;}">
+                    Get Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content fade-up">
+                <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">
+                    Industrial Manpower Specialists
+                </span>
+                <h1 style="color: white;">Powering Production with Reliable Workforce</h1>
+                <p>We deliver skilled and unskilled workforce solutions for manufacturing, chemical, and industrial sectors—ensuring reliability, safety, and seamless operational continuity.</p>
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Consultation <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="services.html" class="btn btn-outline" style="color: white; border-color: white;">
+                        View Our Services
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section style="padding: 4rem 0;">
+            <div class="container">
+                <div class="section-title fade-up">
+                    <span>Our Expertise</span>
+                    <h2>Comprehensive Industrial Solutions</h2>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card fade-up">
+                        <div class="service-icon"><i class="fas fa-users-gear"></i></div>
+                        <h3>Contract Manpower</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                            Skilled, semi-skilled, and unskilled labor supply for manufacturing units. Fully compliant with labor laws.
+                        </p>
+                        <a href="services.html" style="color: var(--secondary); font-weight: 600;">Learn More &rarr;</a>
+                    </div>
+
+                    <div class="card fade-up" style="transition-delay: 0.1s;">
+                        <div class="service-icon"><i class="fas fa-helmet-safety"></i></div>
+                        <h3>Industrial Housekeeping</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                            Specialized cleaning and maintenance services for factories, warehouses, and industrial plants.
+                        </p>
+                        <a href="services.html" style="color: var(--secondary); font-weight: 600;">Learn More &rarr;</a>
+                    </div>
+
+                    <div class="card fade-up" style="transition-delay: 0.2s;">
+                        <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                        <h3>Payroll & Compliance</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                            End-to-end management of PF, ESIC, and statutory compliances so you can focus on production.
+                        </p>
+                        <a href="services.html" style="color: var(--secondary); font-weight: 600;">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section style="padding: 5rem 0; background-color: var(--bg-body);">
+            <div class="container">
+                <div class="section-title fade-up">
+                <span>What We Offer</span>
+                <h2>Our Key Services</h2>
+            </div>
+                <div class="grid-3">
+                    <div class="card key-service-card fade-up">
+                        <div class="service-card-image-container">
+                            <img src="assets/images/3.png" alt="Manpower Supply Team" class="service-card-image">
+                            <span class="service-badge">Manpower Supply</span>
+                        </div>
+                        <div class="service-card-body">
+                            <h3>Skilled & Unskilled Manpower</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                                Fast, reliable workforce aligned to your shifts, productivity targets, and safety needs.
+                            </p>
+                            <div class="trades-grid" style="margin-bottom: 1.5rem;">
+                                <span class="trade-tag">Rapid Deployment</span>
+                                <span class="trade-tag">Verified Workforce</span>
+                                <span class="trade-tag">Shift Ready</span>
+                            </div>
+                            <a href="services.html" style="color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 5px;">
+                                Explore Service <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card key-service-card fade-up" style="transition-delay: 0.1s;">
+                        <div class="service-card-image-container">
+                            <img src="assets/images/2.png" alt="On-site Management Team" class="service-card-image">
+                            <span class="service-badge">On-site Management</span>
+                        </div>
+                        <div class="service-card-body">
+                            <h3>Contract Labor Management</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                                End-to-end handling: attendance, discipline, supervision, replacements, and continuity.
+                            </p>
+                            <div class="trades-grid" style="margin-bottom: 1.5rem;">
+                                <span class="trade-tag">Attendance Control</span>
+                                <span class="trade-tag">Supervisor Support</span>
+                                <span class="trade-tag">Replacements</span>
+                            </div>
+                            <a href="services.html" style="color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 5px;">
+                                Explore Service <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card key-service-card fade-up" style="transition-delay: 0.2s;">
+                        <div class="service-card-image-container">
+                            <img src="assets/images/4.png" alt="Payroll & Compliance Team" class="service-card-image">
+                            <span class="service-badge">Payroll & Compliance</span>
+                        </div>
+                        <div class="service-card-body">
+                            <h3>Payroll & Statutory Compliance</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                                PF, ESIC, wages, and documentation managed with audit-ready monthly compliance.
+                            </p>
+                            <div class="trades-grid" style="margin-bottom: 1.5rem;">
+                                <span class="trade-tag">PF / ESIC</span>
+                                <span class="trade-tag">Payroll Reports</span>
+                                <span class="trade-tag">Audit Ready</span>
+                            </div>
+                            <a href="services.html" style="color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 5px;">
+                                Explore Service <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .key-service-card {
+                    padding: 0; 
+                    /* Added transparent border initially so it doesn't jump when hovered */
+                    border: 1px solid var(--border); 
+                    background: var(--bg-card);
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+                    /* Updated transition to cubic-bezier for "smooth" feel */
+                    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                                box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+                                border-color 0.3s ease;
+                    overflow: hidden; /* Ensures image doesn't spill over rounded corners */
+                    border-radius: var(--radius-md);
+                }
+
+                .key-service-card:hover {
+                    transform: translateY(-8px); 
+                    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+                    /* Shows the outline color on hover */
+                    border-color: var(--secondary);
+                }
+
+                .service-card-image-container {
+                    position: relative;
+                    /* Removed border-radius here since overflow:hidden is on parent now */
+                    height: 220px;
+                    overflow: hidden;
+                }
+
+                .service-card-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    /* Smoother image zoom */
+                    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+                }
+
+                .key-service-card:hover .service-card-image {
+                    transform: scale(1.02); 
+                }
+
+                .service-badge {
+                    position: absolute;
+                    bottom: 15px;
+                    left: 15px;
+                    background: var(--bg-card);
+                    padding: 6px 16px;
+                    border-radius: 50px;
+                    font-size: 0.85rem;
+                    font-weight: 700;
+                    color: var(--primary);
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                    z-index: 2;
+                }
+                
+                [data-theme="dark"] .service-badge {
+                    background: #fff;
+                    color: #000;
+                }
+
+                .service-card-body {
+                    padding: 1.5rem;
+                    /* Removed the top orange border since we now have a full outline on hover */
+                    /* border-top: 4px solid var(--secondary); */ 
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                }
+
+                .trades-grid {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                }
+
+                .trade-tag {
+                    background: var(--bg-body);
+                    padding: 6px 12px;
+                    border-radius: 50px;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    color: var(--text-muted);
+                    border: 1px solid var(--border);
+                }
+            </style>
+        </section>
+        <section style="background-color: var(--bg-card); padding: 5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+            <div class="container">
+                <div class="grid-3" style="align-items: center;">
+                    <div class="fade-up" style="grid-column: span 2; padding-right: 2rem;">
+                        <span style="color: var(--secondary); font-weight: 700;">Why Gayatri Enterprises?</span>
+                        <h2 style="margin-bottom: 1.5rem;">We Handle the Headache of <br>Workforce Management</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                            Managing a factory is hard enough without worrying about labor shortages, union issues, or legal compliance. We step in as your strategic HR partner.
+                        </p>
+                        <ul style="margin-bottom: 2rem; display: flex; flex-direction: column; gap: 10px;">
+                            <li><i class="fas fa-check-circle" style="color: var(--secondary);"></i> <strong>Zero Downtime:</strong> Rapid replacement of absent workers.</li>
+                            <li><i class="fas fa-check-circle" style="color: var(--secondary);"></i> <strong>100% Compliant:</strong> PF, ESIC, and labor license handled.</li>
+                            <li><i class="fas fa-check-circle" style="color: var(--secondary);"></i> <strong>Safety Trained:</strong> Workers briefed on industrial safety.</li>
+                        </ul>
+                        <a href="about.html" class="btn btn-primary">Read Our Story</a>
+                    </div>
+                    
+                    <div class="fade-up" style="position: relative;">
+                        <img src="assets/images/workshop_assembling.png" alt="Factory Worker" style="border-radius: var(--radius-md); box-shadow: var(--shadow);">
+                        <div style="position: absolute; bottom: -20px; left: -20px; background: var(--primary); color: white; padding: 20px; border-radius: var(--radius-sm);">
+                            <i class="fas fa-star" style="color: var(--secondary);"></i>
+                            <strong>Top Rated</strong> <br> Industrial Supplier
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section style="padding: 5rem 0; text-align: center;">
+            <div class="container fade-up">
+                <h2>Ready to Optimize Your Workforce?</h2>
+                <p style="max-width: 600px; margin: 0 auto 2rem auto; color: var(--text-muted);">
+                    Contact us today for a free manpower audit and quote. We respond within 2 hours.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 15px;">
+                    <a href="tel:+919016461241" class="btn btn-primary">
+                        <i class="fas fa-phone-alt"></i> Call +919016461241
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">
+                        Request Callback
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer style="background: #111827; color: #F3F4F6; padding: 4rem 0 2rem 0;">
+        <div class="container">
+            <div class="grid-3" style="margin-bottom: 3rem;">
+                <div>
+                    <div class="logo" style="margin-bottom: 1rem; color: #fff;">
+                        <img src="assets/images/ge_logo.svg" alt="Gayatri Enterprises Logo" class="footer-white-logo">
+                        Gayatri <span>Enterprises</span>
+                    </div>
+                    <p style="color: #9CA3AF; margin-bottom: 1.5rem;">
+                        Your trusted partner for industrial manpower, housekeeping, and compliance solutions.
+                    </p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: #fff; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: #fff; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #fff; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: #fff;">Quick Links</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px;">
+                        <li><a href="services.html" style="color: #9CA3AF;">Manpower Services</a></li>
+                        <li><a href="services.html" style="color: #9CA3AF;">Industrial Cleaning</a></li>
+                        <li><a href="industries.html" style="color: #9CA3AF;">Industries Served</a></li>
+                        <li><a href="contact.html" style="color: #9CA3AF;">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: #fff;">Contact Us</h4>
+                    <p style="color: #9CA3AF; margin-bottom: 10px;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--secondary); width: 20px;"></i> 
+                        GIDC Estate, Ankleshwar, Gujarat - 393002
+                    </p>
+                    <p style="color: #9CA3AF; margin-bottom: 10px;">
+                        <i class="fas fa-phone" style="color: var(--secondary); width: 20px;"></i> 
+                        +91 90164 61241
+                    </p>
+                    <p style="color: #9CA3AF;">
+                        <i class="fas fa-envelope" style="color: var(--secondary); width: 20px;"></i> 
+                        gayatrienterprises123456@gmail.com
+                    </p>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #374151; padding-top: 2rem; text-align: center; color: #6B7280; font-size: 0.9rem;">
+                &copy; 2026 Gayatri Enterprises. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="mobile-sticky-bar">
+        <div class="grid">
+            <a href="tel:+919016461241" class="btn btn-primary" style="justify-content: center; padding: 10px;">
+                <i class="fas fa-phone"></i> Call Now
+            </a>
+            <a href="contact.html" class="btn btn-outline" style="justify-content: center; padding: 10px;">
+                <i class="fas fa-envelope"></i> Inquiry
+            </a>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

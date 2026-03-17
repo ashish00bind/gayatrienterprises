@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Industrial Manpower & Factory Solutions</title>
+    <meta name="description" content="Expert manpower supply services: Skilled welders, fitters, CNC operators, and unskilled labor. Industrial housekeeping and compliance management.">
+    <meta name="description" content="Explore industrial manpower services offered by Gayatri Enterprises including skilled labour supply, contract labour management and workforce solutions for factories and warehouses.">
+    <meta name="keywords" content="industrial manpower, factory solutions, skilled labor, unskilled labor, contract labor">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Page Specific Styles */
+        .page-hero {
+            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), 
+                        url('assets/images/industries3.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: var(--header-height);
+        }
+
+        .service-detail-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            height: 100%;
+        }
+
+        .service-detail-card ul {
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .service-detail-card li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+        }
+
+        .service-detail-card li i {
+            color: var(--secondary);
+        }
+
+        .process-step {
+            position: relative;
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: 0.3s;
+        }
+        
+        .process-step:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 1rem auto;
+        }
+        
+        /* Trades Grid (Tags) */
+        .trades-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .trade-tag {
+            background: var(--bg-body);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+
+
+        /* --- Brand Logo Sizing & Theme Compatibility --- */
+        .brand-logo {
+            height: 40px; /* perfectly aligns with the 1.5rem text size */
+            width: auto;
+            display: block;
+            object-fit: contain;
+            transition: filter 0.3s ease;
+        }
+
+        /* Light Mode (Default) - Inverts the white SVG to dark charcoal to match text */
+        :root .brand-logo {
+            filter: invert(85%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(15%);
+        }
+
+        /* Dark Mode - Keeps the SVG in its original white color */
+        [data-theme="dark"] .brand-logo,
+        .footer-logo {
+            filter: none; 
+        }
+        .footer-white-logo {
+            height: 45px; /* Text ke size ke hisaab se perfect alignment */
+            width: auto;
+            display: block;
+            object-fit: contain;
+            /* Yeh filter SVG ko pehle black karta hai, phir invert karke pure white (#FFFFFF) bana deta hai */
+            filter: brightness(0) invert(1); 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <!-- <a href="index.html" class="logo">
+                <i class="fa-solid fa-industry"></i>
+                Gayatri <span>Enterprises</span>
+            </a> -->
+            <a href="index.html" class="logo">
+                <img src="assets/images/ge_logo.svg" alt="Gayatri Enterprises Logo" class="brand-logo">
+                Gayatri <span>Enterprises</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <a href="contact.html" class="btn btn-primary" style="display: none; @media(min-width:768px){display:flex;}">
+                    Get Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container fade-up">
+                <h1 style="color: white;font-size: 3rem; margin-bottom: 1rem;">Our Industrial Services</h1>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: #D1D5DB;">
+                    Comprehensive workforce and facility management solutions tailored for high-output manufacturing environments.
+                </p>
+            </div>
+        </section>
+
+        <section style="padding: 5rem 0;">
+            <div class="container">
+                <div class="section-title fade-up">
+                    <span>What We Offer</span>
+                    <h2>End-to-End Plant Support</h2>
+                </div>
+                
+
+                <div class="grid-3"> <style>.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }</style>
+
+                    <article class="card service-detail-card fade-up">
+                        <div class="service-icon"><i class="fas fa-user-gear"></i></div>
+                        <h3>Contract Manpower Supply</h3>
+                        <p style="color: var(--text-muted);">
+                            The core of our business. We supply vetted, medical-checked, and ready-to-deploy workforce for short-term or long-term contracts.
+                        </p>
+                        <div style="margin-top: auto;">
+                            <strong>Who we supply:</strong>
+                            <div class="trades-grid" style="margin-top: 10px;">
+                                <span class="trade-tag">Helpers</span>
+                                <span class="trade-tag">Packers</span>
+                                <span class="trade-tag">Loading/Unloading</span>
+                                <span class="trade-tag">Assembly Line</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card service-detail-card fade-up" style="transition-delay: 0.1s;">
+                        <div class="service-icon"><i class="fas fa-wrench"></i></div>
+                        <h3>Skilled Technical Staff</h3>
+                        <p style="color: var(--text-muted);">
+                            Certified professionals for specialized machinery and maintenance tasks. We verify certifications and practical skills before deployment.
+                        </p>
+                        <div style="margin-top: auto;">
+                            <strong>Trades:</strong>
+                            <div class="trades-grid" style="margin-top: 10px;">
+                                <span class="trade-tag">Welders (TIG/MIG)</span>
+                                <span class="trade-tag">Fitters</span>
+                                <span class="trade-tag">Electricians</span>
+                                <span class="trade-tag">CNC Operators</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card service-detail-card fade-up" style="transition-delay: 0.2s;">
+                        <div class="service-icon"><i class="fas fa-broom"></i></div>
+                        <h3>Industrial Housekeeping</h3>
+                        <p style="color: var(--text-muted);">
+                            Maintenance of hygiene standards in factories, warehouses, and corporate offices using industrial-grade equipment.
+                        </p>
+                        <div style="margin-top: auto;">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 5S Implementation</li>
+                                <li><i class="fas fa-check"></i> Floor Scrubbing</li>
+                                <li><i class="fas fa-check"></i> Waste Disposal Management</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                     <article class="card service-detail-card fade-up">
+                        <div class="service-icon"><i class="fas fa-scale-balanced"></i></div>
+                        <h3>Statutory Compliance</h3>
+                        <p style="color: var(--text-muted);">
+                            We take legal liability off your shoulders. Our dedicated team ensures all labor laws are followed meticulously.
+                        </p>
+                        <div style="margin-top: auto;">
+                            <ul>
+                                <li><i class="fas fa-check"></i> PF & ESIC Management</li>
+                                <li><i class="fas fa-check"></i> Factory Act Compliance</li>
+                                <li><i class="fas fa-check"></i> Labour License Renewals</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="card service-detail-card fade-up" style="transition-delay: 0.1s;">
+                        <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h3>Payroll Outsourcing</h3>
+                        <p style="color: var(--text-muted);">
+                            Timely and accurate salary processing for contract staff. We handle attendance tracking, leave management, and bank transfers.
+                        </p>
+                    </article>
+
+                    <article class="card service-detail-card fade-up" style="transition-delay: 0.2s;">
+                        <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <h3>On-Site Supervision</h3>
+                        <p style="color: var(--text-muted);">
+                            For large deployments (50+ workers), we provide dedicated site supervisors to manage attendance, discipline, and shifts.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section style="background-color: var(--bg-card); padding: 5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+            <div class="container">
+                <div class="section-title fade-up">
+                    <span>How We Work</span>
+                    <h2>Deployment Process</h2>
+                </div>
+
+                <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="process-step fade-up">
+                        <div class="step-number">1</div>
+                        <h4>Requirement</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">We audit your plant needs and define job roles.</p>
+                    </div>
+                    <div class="process-step fade-up" style="transition-delay: 0.1s;">
+                        <div class="step-number">2</div>
+                        <h4>Sourcing</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">We tap into our database of 5000+ workers to find matches.</p>
+                    </div>
+                    <div class="process-step fade-up" style="transition-delay: 0.2s;">
+                        <div class="step-number">3</div>
+                        <h4>Screening</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Medical checks, police verification, and skill tests.</p>
+                    </div>
+                    <div class="process-step fade-up" style="transition-delay: 0.3s;">
+                        <div class="step-number">4</div>
+                        <h4>Deployment</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Workers arrive with uniforms, ID cards, and PPE.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 5rem 0; text-align: center;">
+            <div class="container fade-up">
+                <h2>Need a Specific Skill Set?</h2>
+                <p style="max-width: 600px; margin: 0 auto 2rem auto; color: var(--text-muted);">
+                    From forklift drivers to packaging experts, we can mobilize workforce within 48 hours.
+                </p>
+                <a href="contact.html" class="btn btn-primary">
+                    Request Manpower Rate Card
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #111827; color: #F3F4F6; padding: 4rem 0 2rem 0;">
+        <div class="container">
+            <div class="grid-3" style="margin-bottom: 3rem;">
+                <div>
+                    <div class="logo" style="margin-bottom: 1rem; color: #fff;">
+                        <img src="assets/images/ge_logo.svg" alt="Gayatri Enterprises Logo" class="footer-white-logo">
+                        Gayatri <span>Enterprises</span>
+                    </div>
+                    <p style="color: #9CA3AF; margin-bottom: 1.5rem;">
+                        Your trusted partner for industrial manpower, housekeeping, and compliance solutions.
+                    </p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: #fff;"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: #fff;">Quick Links</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px;">
+                        <li><a href="services.html" style="color: #9CA3AF;">Manpower Services</a></li>
+                        <li><a href="services.html" style="color: #9CA3AF;">Industrial Cleaning</a></li>
+                        <li><a href="contact.html" style="color: #9CA3AF;">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #fff;">Contact Us</h4>
+                    <p style="color: #9CA3AF; margin-bottom: 10px;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--secondary);"></i> GIDC Estate, Ankleshwar
+                    </p>
+                    <p style="color: #9CA3AF; margin-bottom: 10px;">
+                        <i class="fas fa-phone" style="color: var(--secondary);"></i> +91 90164 61241
+                    </p>
+                    <p style="color: #9CA3AF;">
+                        <i class="fas fa-envelope" style="color: var(--secondary);"></i> gayatrienterprises123456@gmail.com
+                    </p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #374151; padding-top: 2rem; text-align: center; color: #6B7280; font-size: 0.9rem;">
+                &copy; 2026 Gayatri Enterprises. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <div class="mobile-sticky-bar">
+        <div class="grid">
+            <a href="tel:+919016461241" class="btn btn-primary" style="justify-content: center; padding: 10px;">
+                <i class="fas fa-phone"></i> Call Now
+            </a>
+            <a href="contact.html" class="btn btn-outline" style="justify-content: center; padding: 10px;">
+                <i class="fas fa-envelope"></i> Inquiry
+            </a>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

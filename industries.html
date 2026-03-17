@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries & Clients | Gayatri Enterprises</title>
+    <meta name="description" content="Serving major industries including Pharmaceuticals, Chemicals, Textiles, and Engineering. Trusted by leading manufacturers for workforce solutions.">
+    <meta name="description" content="Gayatri Enterprises provides manpower services for chemical plants, manufacturing industries, warehouses and infrastructure projects across Gujarat.">
+    <meta name="keywords" content="industrial manpower supplier, chemical plant labor supply, manufacturing workforce solutions, warehouse staffing, infrastructure project labor, Gujarat manpower services">  
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Page Specific Styles */
+        .page-hero {
+            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), 
+                        url('assets/images/industries2.jpg'); /* Warehouse/Logistics BG */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: var(--header-height);
+        }
+
+        /* Industry Card Overrides */
+        .industry-card {
+            padding: 0; /* Remove default padding to let image bleed */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .industry-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .industry-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Testimonial Box */
+        .testimonial {
+            background: var(--bg-body);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--secondary);
+            font-style: italic;
+        }
+
+        /* --- LOGO CLOUD RESPONSIVE & THEME STYLES --- */
+        
+        /* Theme Variables */
+        :root {
+            --logo-card-bg: #ffffff;
+            --logo-shadow: rgba(0, 0, 0, 0.08); 
+            --logo-fade: var(--bg-card); /* Matches the section background */
+        }
+
+        [data-theme="dark"] {
+            --logo-card-bg: #1F2937;
+            --logo-shadow: rgba(0, 0, 0, 0.4);
+            --logo-fade: var(--bg-card); 
+        }
+
+        .logo-wrapper {
+            margin-top: 3rem;
+            width: 100%;
+        }
+
+        /* container */
+        .logo-section {
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* fade edges */
+        .logo-section::before,
+        .logo-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 140px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+            transition: background 0.3s ease;
+        }
+
+        .logo-section::before {
+            left: 0;
+            background: linear-gradient(to right, var(--logo-fade), transparent);
+        }
+
+        .logo-section::after {
+            right: 0;
+            background: linear-gradient(to left, var(--logo-fade), transparent);
+        }
+
+        /* rows */
+        .logo-row {
+            overflow: hidden;
+            margin: 25px 0;
+        }
+
+        /* track */
+        .logo-track {
+            display: flex;
+            gap: 30px;
+            width: max-content;
+            
+            /* GPU optimization */
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+            animation: scroll-left 45s linear infinite;
+        }
+
+        /* reverse row */
+        .logo-row.reverse .logo-track {
+            animation: scroll-right 45s linear infinite;
+        }
+
+        /* pause on hover */
+        .logo-section:hover .logo-track {
+            animation-play-state: paused;
+        }
+
+        /* card */
+        .logo-card {
+            min-width: 220px;
+            height: 120px;
+            background: var(--logo-card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 20px var(--logo-shadow);
+            transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* logos */
+        .logo-card img {
+            max-width: 130px;
+            max-height: 70px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.8;
+            transition: all 0.4s ease;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        /* grayscale to color */
+        .logo-card:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* animations */
+        @keyframes scroll-left {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        @keyframes scroll-right {
+            0% { transform: translate3d(-50%, 0, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+
+        /* mobile responsive */
+        @media (max-width: 1024px) {
+            .logo-card { min-width: 180px; height: 100px; }
+            .logo-card img { max-width: 110px; max-height: 60px; }
+            .logo-track { gap: 25px; }
+            .logo-section::before, .logo-section::after { width: 100px; }
+        }
+
+        @media (max-width: 768px) {
+            .logo-card { min-width: 150px; height: 90px; }
+            .logo-card img { max-width: 90px; max-height: 50px; }
+            .logo-track { gap: 20px; animation-duration: 35s; }
+            .logo-section::before, .logo-section::after { width: 60px; }
+            .logo-row { margin: 15px 0; }
+        }
+
+        @media (max-width: 480px) {
+            .logo-card { min-width: 120px; height: 75px; border-radius: 12px; }
+            .logo-card img { max-width: 75px; max-height: 40px; }
+            .logo-track { gap: 15px; animation-duration: 25s; }
+            .logo-section::before, .logo-section::after { width: 35px; }
+        }
+
+
+        /* --- Brand Logo Sizing & Theme Compatibility --- */
+        .brand-logo {
+            height: 40px; /* perfectly aligns with the 1.5rem text size */
+            width: auto;
+            display: block;
+            object-fit: contain;
+            transition: filter 0.3s ease;
+        }
+
+        /* Light Mode (Default) - Inverts the white SVG to dark charcoal to match text */
+        :root .brand-logo {
+            filter: invert(85%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(15%);
+        }
+
+        /* Dark Mode - Keeps the SVG in its original white color */
+        [data-theme="dark"] .brand-logo,
+        .footer-logo {
+            filter: none; 
+        }
+
+        /* --- Footer Logo White Force --- */
+        .footer-logo {
+            /* brightness(0) makes the logo completely black, and invert(1) flips it to pure white */
+            filter: brightness(0) invert(1) !important;
+        }
+        .footer-white-logo {
+            height: 45px; /* Text ke size ke hisaab se perfect alignment */
+            width: auto;
+            display: block;
+            object-fit: contain;
+            /* Yeh filter SVG ko pehle black karta hai, phir invert karke pure white (#FFFFFF) bana deta hai */
+            filter: brightness(0) invert(1); 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <!-- <a href="index.html" class="logo">
+                <i class="fa-solid fa-industry"></i>
+                Gayatri <span>Enterprises</span>
+            </a> -->
+
+            <a href="index.html" class="logo">
+                <img src="assets/images/ge_logo.svg" alt="Gayatri Enterprises Logo" class="brand-logo">
+                Gayatri <span>Enterprises</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html" class="active">Industries</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <a href="contact.html" class="btn btn-primary" style="display: none; @media(min-width:768px){display:flex;}">
+                    Get Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container fade-up">
+                <h1 style="color: white; font-size: 3rem; margin-bottom: 1rem;">Industries We Serve</h1>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: #D1D5DB;">
+                    Specialized workforce solutions adapted to the unique safety and skill requirements of diverse industrial sectors.
+                </p>
+            </div>
+        </section>
+
+        <section style="padding: 5rem 0;">
+            <div class="container">
+                <div class="section-title fade-up">
+                    <span>Sector Expertise</span>
+                    <h2>Tailored Solutions for Your Sector</h2>
+                </div>
+
+                <div class="grid-3"> <style>.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }</style>
+
+                    <div class="card industry-card fade-up">
+                        <img src="assets/images/chemical.png" alt="Chemical Plant" class="industry-img">
+                        <div class="industry-content">
+                            <h3><i class="fas fa-flask" style="color: var(--secondary); margin-right: 8px;"></i> Chemicals & Fertilizers</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                                Safety is paramount. We supply workers trained in handling hazardous materials and PPE protocols.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card industry-card fade-up" style="transition-delay: 0.1s;">
+                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=2069&auto=format&fit=crop" alt="Pharmaceutical Lab" class="industry-img">
+                        <div class="industry-content">
+                            <h3><i class="fas fa-capsules" style="color: var(--secondary); margin-right: 8px;"></i> Pharmaceuticals & Healthcare</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                                Compliance-ready workforce support for pharma units, operators, helpers, and plant staff.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card industry-card fade-up" style="transition-delay: 0.2s;">
+                        <img src="assets/images/workshop_assembling.png" alt="Engineering Workshop" class="industry-img">
+                        <div class="industry-content">
+                            <h3><i class="fas fa-cogs" style="color: var(--secondary); margin-right: 8px;"></i> Manufacturing & Engineering</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                                Skilled & semi-skilled manpower for assembly, maintenance support, and shop-floor operations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card industry-card fade-up">
+                        <img src="assets/images/infrastructure_maintenance_workers.png" alt="Textile Factory" class="industry-img">
+                        <div class="industry-content">
+                            <h3><i class="fas fa-tshirt" style="color: var(--secondary); margin-right: 8px;"></i> Infrastructure & Utilities</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                                Contract manpower for plants, industrial utilities, and facility operations support.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card industry-card fade-up" style="transition-delay: 0.1s;">
+                        <img src="assets/images/packaging_machine.png" alt="Packaging Box" class="industry-img">
+                        <div class="industry-content">
+                            <h3><i class="fas fa-box-open" style="color: var(--secondary); margin-right: 8px;"></i> Packaging & Logistics</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                                Fast-paced loading, unloading, and warehouse management staff.
+                            </p>
+                        </div>
+                    </div>
+
+                     <div class="card industry-card fade-up" style="transition-delay: 0.2s;">
+                        <img src="assets/images/packaging_boxes_and managing_logistics.png" alt="Food Processing" class="industry-img">
+                        <div class="industry-content">
+                            <h3><i class="fas fa-utensils" style="color: var(--secondary); margin-right: 8px;"></i> Loading & Unloading</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                                Health-certified workers for food processing plants with strict hygiene protocols.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background-color: var(--bg-card); padding: 5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+            <div class="container">
+                <div class="section-title fade-up">
+                    <span>Our Portfolio</span>
+                    <h2>Trusted by Leaders</h2>
+                    <p style="max-width: 600px; margin: 1rem auto; color: var(--text-muted);">
+                        We are proud to be the preferred vendor for some of the region's largest manufacturing units.
+                    </p>
+                </div>
+
+                <div class="logo-wrapper fade-up">
+                    <div class="logo-section">
+
+                        <div class="logo-row">
+                            <div class="logo-track">
+                                <div class="logo-card"><img src="logos/grp_ltd.jpeg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/kasturi.jpeg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/rapicut.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/tatva_chintan_ltd.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/element_chemilink.jpg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/apl-logo.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/hema.webp" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/ahepra.png" alt="Client Logo"></div>
+
+                                <div class="logo-card"><img src="logos/grp_ltd.jpeg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/kasturi.jpeg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/rapicut.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/tatva_chintan_ltd.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/element_chemilink.jpg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/apl-logo.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/hema.webp" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/ahepra.png" alt="Client Logo"></div>
+                            </div>
+                        </div>
+
+                        <div class="logo-row reverse">
+                            <div class="logo-track">
+                                <div class="logo-card"><img src="logos/himaniu_industries.jpg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/hema.webp" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/prudence_pharma_ltd.jpg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/ahepra.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/upl-united-phosphorus-ltd-seeklogo.svg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/cardkem-pharma-pvt-ltd.jpg.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/hema_pharma_ltd.jpeg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/apl-logo.png" alt="Client Logo"></div>
+
+                                <div class="logo-card"><img src="logos/himaniu_industries.jpg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/hema.webp" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/prudence_pharma_ltd.jpg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/ahepra.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/upl-united-phosphorus-ltd-seeklogo.svg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/cardkem-pharma-pvt-ltd.jpg.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/hema_pharma_ltd.jpeg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/apl-logo.png" alt="Client Logo"></div>
+                            </div>
+                        </div>
+
+                        <div class="logo-row">
+                            <div class="logo-track">
+                                <div class="logo-card"><img src="logos/ewac.jpg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/apl-logo.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/ahepra.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/kasturi.jpeg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/hema.webp" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/rapicut.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/element_chemilink.jpg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/grp_ltd.jpeg" alt="Client Logo"></div>
+                                
+
+                                <div class="logo-card"><img src="logos/ewac.jpg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/kasturi.jpeg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/ahepra.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/hema.webp" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/apl-logo.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/rapicut.png" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/element_chemilink.jpg" alt="Client Logo"></div>
+                                <div class="logo-card"><img src="logos/grp_ltd.jpeg" alt="Client Logo"></div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section style="padding: 5rem 0;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Client Success Stories</h2>
+                <div class="grid-3">
+                    <div class="testimonial fade-up">
+                        <p style="margin-bottom: 1rem; color: var(--text-muted);">
+                            "Gayatri Enterprises solved our chronic absenteeism issue. Their ability to provide replacement workers within 2 hours is impressive."
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 50px; height: 50px; background: #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">AK</div>
+                            <div>
+                                <h5 style="margin-bottom: 0;">Anil Kumar</h5>
+                                <span style="font-size: 0.85rem; color: var(--secondary);">Plant Head, ABC Chemicals</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial fade-up" style="transition-delay: 0.1s;">
+                        <p style="margin-bottom: 1rem; color: var(--text-muted);">
+                            "We were worried about compliance audits. Gayatri's team handled all the PF and ESIC paperwork flawlessly. Highly recommended."
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 50px; height: 50px; background: #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">RP</div>
+                            <div>
+                                <h5 style="margin-bottom: 0;">Rajesh Patel</h5>
+                                <span style="font-size: 0.85rem; color: var(--secondary);">HR Manager, Gujarat Pharma Ltd</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial fade-up" style="transition-delay: 0.2s;">
+                        <p style="margin-bottom: 1rem; color: var(--text-muted);">
+                            "Their housekeeping team transformed our shop floor. Professional, disciplined, and very hardworking staff."
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 50px; height: 50px; background: #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">VS</div>
+                            <div>
+                                <h5 style="margin-bottom: 0;">Vikram Singh</h5>
+                                <span style="font-size: 0.85rem; color: var(--secondary);">Director, Zen Textiles</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--primary); color: white; padding: 4rem 0; text-align: center;">
+            <div class="container fade-up">
+                <h2 style="color: white;">Join Our Client List</h2>
+                <p style="color: #D1D5DB; margin-bottom: 2rem;">Experience the difference of a professional manpower partner.</p>
+                <a href="contact.html" class="btn" style="background: white; color: var(--primary);">Contact Us Today</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #111827; color: #F3F4F6; padding: 4rem 0 2rem 0;">
+        <div class="container">
+            <div class="grid-3" style="margin-bottom: 3rem;">
+                <div>
+                    <div class="logo" style="margin-bottom: 1rem; color: #fff;">
+                        <img src="assets/images/ge_logo.svg" alt="Gayatri Enterprises Logo" class="footer-white-logo">
+                        Gayatri <span>Enterprises</span>
+                    </div>
+                    <p style="color: #9CA3AF; margin-bottom: 1.5rem;">
+                        Your trusted partner for industrial manpower, housekeeping, and compliance solutions.
+                    </p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: #fff;"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: #fff;">Quick Links</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px;">
+                        <li><a href="services.html" style="color: #9CA3AF;">Manpower Services</a></li>
+                        <li><a href="services.html" style="color: #9CA3AF;">Industrial Cleaning</a></li>
+                        <li><a href="industries.html" style="color: #9CA3AF;">Industries Served</a></li>
+                        <li><a href="contact.html" style="color: #9CA3AF;">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #fff;">Contact Us</h4>
+                    <p style="color: #9CA3AF; margin-bottom: 10px;">
+                        <i class="fas fa-phone" style="color: var(--secondary);"></i> +91 90164 61241
+                    </p>
+                    <p style="color: #9CA3AF;">
+                        <i class="fas fa-envelope" style="color: var(--secondary);"></i> gayatrienterprises123456@gmail.com
+                    </p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #374151; padding-top: 2rem; text-align: center; color: #6B7280; font-size: 0.9rem;">
+                &copy; 2026 Gayatri Enterprises. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <div class="mobile-sticky-bar">
+        <div class="grid">
+            <a href="tel:+919016461241" class="btn btn-primary" style="justify-content: center; padding: 10px;">
+                <i class="fas fa-phone"></i> Call Now
+            </a>
+            <a href="contact.html" class="btn btn-outline" style="justify-content: center; padding: 10px;">
+                <i class="fas fa-envelope"></i> Inquiry
+            </a>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
