@@ -1,0 +1,317 @@
+/* =========================================
+   1. VARIABLES & THEME SETUP
+   ========================================= */
+:root {
+    /* Fonts */
+    --font-heading: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Light Mode (Default) */
+    --primary: #1F2937;       /* Dark Charcoal */
+    --secondary: #D97706;     /* Industrial Amber/Orange */
+    --secondary-hover: #B45309;
+    --accent: #64748B;        /* Steel Blue/Grey */
+    --bg-body: #F3F4F6;       /* Light Grey / Off-white */
+    --bg-card: #FFFFFF;
+    --text-main: #111827;
+    --text-muted: #4B5563;
+    --border: #E5E7EB;
+    --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
+    --glass: rgba(255, 255, 255, 0.8);
+    
+    /* Spacing & Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --container: 1280px;
+    --header-height: 80px;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --bg-body: #111827;       /* Deep Graphite */
+    --bg-card: #1F2937;       /* Lighter Charcoal */
+    --text-main: #F9FAFB;
+    --text-muted: #9CA3AF;
+    --border: #374151;
+    --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+    --glass: rgba(17, 24, 39, 0.8);
+}
+
+/* =========================================
+   2. GLOBAL RESET & TYPOGRAPHY
+   ========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s ease; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   3. COMPONENTS & UI ELEMENTS
+   ========================================= */
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--secondary);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--secondary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217, 119, 6, 0.6);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+[data-theme="dark"] .btn-outline {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* Cards */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+    border-color: var(--secondary);
+}
+
+/* Section Headings */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title span {
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+}
+
+/* =========================================
+   4. HEADER & NAVIGATION
+   ========================================= */
+header {
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+[data-theme="dark"] .logo { color: #fff; }
+.logo span { color: var(--secondary); }
+
+.nav-links { display: flex; gap: 30px; }
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--secondary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-main);
+    padding: 8px;
+    transition: transform 0.3s ease;
+}
+.theme-toggle:hover { transform: rotate(15deg); }
+
+/* Hamburger */
+.hamburger { display: none; cursor: pointer; }
+
+/* =========================================
+   5. MOBILE STICKY BAR
+   ========================================= */
+.mobile-sticky-bar {
+    display: none; /* Visible only on mobile */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    z-index: 999;
+    padding: 10px 20px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+}
+
+.mobile-sticky-bar .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* =========================================
+   6. ANIMATIONS
+   ========================================= */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Floating WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 90px; /* Above sticky bar on mobile */
+    right: 20px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 998;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover { transform: scale(1.1); }
+
+/* =========================================
+   7. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: var(--header-height);
+        right: -100%;
+        width: 80%;
+        height: calc(100vh - var(--header-height));
+        background: var(--bg-card);
+        flex-direction: column;
+        padding: 2rem;
+        transition: 0.4s ease;
+        border-left: 1px solid var(--border);
+    }
+
+    .nav-links.active { right: 0; }
+    .hamburger { display: block; font-size: 1.5rem; }
+    
+    .mobile-sticky-bar { display: block; }
+    body { padding-bottom: 70px; } /* Space for sticky bar */
+    
+    .section-title h2 { font-size: 2rem; }
+    .whatsapp-float { bottom: 80px; width: 50px; height: 50px; font-size: 1.5rem; }
+}
